@@ -44,13 +44,29 @@ react state during:
 [{number: "Pauline phone", status: "Ringing" id:1}, {number: "Anne phone", status: "Answered", id:2}, {number: "Olga phone", status: "Completed", id:3}, {number: "Don phone", status: "Idle"}]
 
 -----------------------------------------------------------------------------------------
+# Architecture Components & Their Jobs
+
+  +---------+                        +---------+                        +----------+
+  | react   |                        |express  |                        | API      |
+  +---------+                        +---------+                        +----------+
+websocket || server sent event <--    **post** /webhook                   post /call
+                                     recieves JSON from API
+                                      **get** /home
+                                        list of phoneInfo?
+                                      **post** /startdialing
+                                        start making calls 3 at a time
 
 # Order of Build
 1. page-ui --> Display the list of phone numbers and status with non-functional call button
-2. webhook --> build webhook
-3. react-state --> do something with webhook to change the state of react store
-4. one-phonecall-backend --> write some function that "calls for one"
-5. three-phonecalls-backend --> write some function that iterates thru 3 at a time??
+2. spike of express routes
+3. webhook --> build webhook  <---
+4. websocket or server sent event
+5. one-phonecall-backend --> write some function that "calls for one"
+6. three-phonecalls-backend --> write some function that iterates thru 3 at a time??
+
+Notes from chatting w/ Srdjan & Max
+- Server sent events - EJS
+- Set up endpoint for webhook & send POST to endpoint on server 
 
 # Algo
 
