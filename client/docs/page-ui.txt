@@ -1,0 +1,27 @@
+# Problem
+given a list of phone numbers, add numbers to react state [{phone, phone,}]
+input: a list of phone numbers (strings)
+output: a display of phone numbers with statuses 
+
+
+-----------------------------------------------------------------------------------------
+# Examples
+<Table>
+<phone data line compoenent key=index, phoneInfo= >
+<call button component>
+-----------------------------------------------------------------------------------------
+# Data
+
+react State start: 
+[{number:"Pauline phone", status: "Idle"},{number: "Anne phone",status: "Idle"},{number: "Olga phone",status: "Idle"},{number: "Don Phone", status: "Idle"}]
+
+react state during:
+[{number: "Pauline phone", status: "Ringing" id:1}, {number: "Anne phone", status: "Answered", id:2}, {number: "Olga phone", status: "Completed", id:3}, {number: "Don phone", status: "Idle"}]
+-----------------------------------------------------------------------------------------
+# Algo
+
+
+-----------------------------------------------------------------------------------------
+# Code 
+
+

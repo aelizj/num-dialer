@@ -52,6 +52,10 @@ react state during:
 4. one-phonecall-backend --> write some function that "calls for one"
 5. three-phonecalls-backend --> write some function that iterates thru 3 at a time??
 
+Notes from chatting w/ Srdjan & Max
+- Server sent events - EJS
+- Set up endpoint for webhook & send POST to endpoint on server 
+
 # Algo
 
 # Code
