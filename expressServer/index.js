@@ -11,7 +11,11 @@ app.get('/home', (req, res) => {
 })
 
 app.post('/webhook', (req, res) => {
+<<<<<<< HEAD
   let msg = `Got a ${req.method} at ${Date.now()}.`
+=======
+  let msg = `Got a ${req.method} at ${Time.now()}.`
+>>>>>>> 29e9a845687ab996481723a23c51240db9d33f44
   res.send(msg)
 })
 
