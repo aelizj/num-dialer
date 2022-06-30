@@ -11,7 +11,7 @@ app.get('/home', (req, res) => {
 })
 
 app.post('/webhook', (req, res) => {
-  let msg = `Got a ${req.method} at ${Time.now()}.`
+  let msg = `Got a ${req.method} at ${Date.now()}.`
   res.send(msg)
 })
 
