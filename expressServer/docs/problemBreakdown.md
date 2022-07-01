@@ -50,7 +50,7 @@ react state during:
   | react   |                        |express  |                        | API      |
   +---------+                        +---------+                        +----------+
 websocket || server sent event <--    **post** /webhook                   post /call
-                                     recieves JSON from API
+                                        recieves JSON from API
                                       **get** /home
                                         list of phoneInfo?
                                       **post** /startdialing
@@ -58,7 +58,7 @@ websocket || server sent event <--    **post** /webhook                   post /
 
 # Order of Build
 1. page-ui --> Display the list of phone numbers and status with non-functional call button
-2. spike of express routes
+2. spikeExpress -->spike of express routes
 3. webhook --> build webhook  <---
 4. websocket or server sent event
 5. one-phonecall-backend --> write some function that "calls for one"
