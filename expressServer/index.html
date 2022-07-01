@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Server Sent Events</title>
     <script>
-      document.addEventListener("DOMContentLoaded", (e) => {
+      document.addEventListener("DOMContentLoaded", () => {
         console.log("loaded");
-        const evtSource = new EventSource("localhost:3000/webhook");
-        evtSource.onMessage = (e) => {
-        console.log(e.data);
-        };
+      });
+      const evtSource = new EventSource("http://localhost:3000/stream");
+      evtSource.addEventListener ("message", (e) => {
+        console.log(e);
       });
     </script>
   </head>
