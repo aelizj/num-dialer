@@ -1,30 +1,40 @@
 const express = require('express')
 const app = express()
 const port = 3000
-const homePage = require('./index.html')
+const client = {stream: null};
+
+app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.format({
-    
-  
-    'text/html' () {
-      res.send(homePage)
-    },
+  client.stream = null
+  res.set('Content-Type', 'text/html')
+  res.sendFile("/home/aeliz/Capstone/num-dialer/expressServer/index.html")
 })
 
 app.get('/home', (req, res) => {
   res.send("phone numbers are here")
 })
 
-app.post('/webhook', (req, res) => {
-  res.set({
+app.get('/stream', (req, res) => {
+  console.log('request')
+  res.writeHead(200,{
     "Content-Type": "text/event-stream",
     "Cache-Control": "no-cache",
     "Connection": "keep-alive",
     "Access-Control-Allow-Origin": "*"
-});
-  res.data = msg;
-  res.send()
+  });
+  
+  client.stream = res;
+  // res = client.stream;
+})
+app.post('/webhook', (req, res) => {
+  
+  client.stream.write(`data: ${req.body}\n\n`)
+  // console.log(client)
+  console.log("req.body", req.body)
+  // client.stream.write(req.body)
+  // console.log(`data: ${msg}`)
+  //res.status(200).send()
 })
 
 app.post('/startdialing', (req, res) => {
